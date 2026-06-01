@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("assets/images/mountain-sunset.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    margin-left: 140px;
+    padding: 22px;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    min-height: 440px;
+    width: 340px;
+    box-shadow: -12px 12px 14px rgb(34, 33, 33);
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-btn {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+}
+
+input {
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: #fff;
+    background-color: rgba(255,255,255,0.08);
+}
+
+input::placeholder {
+    color: white;
+}
+
+.add-btn {
+    border: none;
+    outline: none;
+    background-color: rgb(62, 224, 65);
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.add-btn:hover {
+    border-radius: 50%;
+}
+
+.add-btn:active {
+    transform: scale(0.90);
+}
+
+/* Todo List styles */
+ul {
+    width: 100%;
+    margin-top: 14px;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(171, 163, 163, 0.6);
+    color: #fff;
+    padding: 8px;
+    margin-bottom: 8px;
+    word-break: break-word;
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.btn-box{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.credit {
+    position: fixed;
+    bottom: 10px;
+    left: 14px;
+    color: #fff;
+    font-size: 12px;
+    font-style: italic;
+}
