@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialHub · Pure frontend</title>
+    <!-- Font Awesome 6 (free) -->
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div id="app">
+    <!-- LOGIN CONTAINER -->
+    <div id="login-container">
+        <h1><i class="fas fa-users"></i> SocialHub</h1>
+        <div class="login-box">
+            <input type="text" id="username-input" placeholder="Username (e.g. alice)" value="alice">
+            <input type="password" id="password-input" placeholder="Password (anything)" value="123">
+            <button id="login-btn"><i class="fas fa-sign-in-alt"></i>  Log in</button>
+            <div class="demo-note">⚡ Demo: use any username / pass</div>
+        </div>
+    </div>
+
+    <!-- MAIN FEED -->
+    <div id="feed-container">
+        <!-- header -->
+        <div class="feed-header">
+            <div class="brand"><i class="fas fa-users"></i> SocialHub</div>
+            <div class="user-badge">
+                <span id="current-user-display">@alice</span>
+                <i class="fas fa-user-circle"></i>
+                <button class="logout-btn" id="logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <!-- notification banner (real-time simulation) -->
+        <div id="notification-banner">
+            <i class="fas fa-bell"></i>
+            <span class="notif-text" id="notif-text">✨ Welcome! No new notifications</span>
+            <button class="clear-notif" id="clear-notif-btn">clear</button>
+        </div>
+
+        <!-- post composer -->
+        <div class="composer">
+            <textarea id="post-textarea" placeholder="What's on your mind?"></textarea>
+            <div class="actions">
+                <div class="left">
+                    <i class="fas fa-image" title="attach image (simulated)"></i>
+                    <i class="fas fa-video" title="attach video (simulated)"></i>
+                    <i class="fas fa-tag" title="tag (simulated)"></i>
+                </div>
+                <button id="publish-post-btn"><i class="fas fa-pen"></i> Post</button>
+            </div>
+        </div>
+
+        <!-- feed posts -->
+        <div id="posts-feed"></div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

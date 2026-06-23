@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="music-player">
+
+        <nav>
+            <div class="circle" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- COVER ART -->
+        <img src="https://picsum.photos/seed/music/300/300" class="thumbnail" alt="cover" id="coverArt">
+
+        <h1 id="songTitle">Loading...</h1>
+        <p id="artistName">Artist</p>
+
+        <audio id="song"></audio>
+
+        <input type="range" value="0" id="progress">
+
+        <span id="currentSong">Select a song</span>
+
+        <div class="controls">
+            <div id="prevBtn"><i class="fa-solid fa-backward"></i></div>
+            <div id="playBtn"><i class="fa-solid fa-play" id="ctrlBtn"></i></div>
+            <div id="nextBtn"><i class="fa-solid fa-forward"></i></div>
+        </div>
+
+        <!-- ADD LOCAL SONGS -->
+        <div class="add-song-section">
+            <input type="file" id="fileInput" accept=".mp3" multiple>
+            <button id="uploadBtn">
+                <i class="fa-solid fa-upload"></i> Select MP3 Files
+            </button>
+        </div>
+
+        <!-- MENU / PLAYLIST -->
+        <div class="menu" id="menu">
+            <h3>Playlist</h3>
+            <ul id="playlist"></ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

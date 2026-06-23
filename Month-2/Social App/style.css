@@ -1,0 +1,429 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+ }
+
+ body {
+     background: #f0f2f5;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+ /* Main app card */
+ #app {
+     max-width: 900px;
+     width: 100%;
+     background: white;
+     border-radius: 28px;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+     margin: 20px;
+     overflow: hidden;
+     transition: all 0.2s;
+ }
+
+ /* ===== LOGIN ===== */
+ #login-container {
+     padding: 2.5rem 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1.5rem;
+ }
+
+ #login-container h1 {
+     font-weight: 600;
+     font-size: 2rem;
+     color: #1b1f23;
+     letter-spacing: -0.5px;
+ }
+
+ #login-container h1 i {
+     color: #0a66c2;
+     margin-right: 8px;
+ }
+
+ .login-box {
+     width: 100%;
+     max-width: 340px;
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+ }
+
+ .login-box input {
+     padding: 14px 18px;
+     border: 1px solid #d1d9e6;
+     border-radius: 60px;
+     font-size: 1rem;
+     background: #fafbfc;
+     transition: 0.15s;
+ }
+
+ .login-box input:focus {
+     outline: 2px solid #0a66c2;
+     background: white;
+ }
+
+ .login-box button {
+     background: #0a66c2;
+     border: none;
+     color: white;
+     font-weight: 600;
+     padding: 14px;
+     border-radius: 60px;
+     font-size: 1.1rem;
+     cursor: pointer;
+     transition: 0.15s;
+     margin-top: 4px;
+ }
+
+ .login-box button:hover {
+     background: #084b8f;
+     transform: scale(1.01);
+ }
+
+ .login-box .demo-note {
+     font-size: 0.8rem;
+     color: #5e6f8d;
+     text-align: center;
+     margin-top: 6px;
+ }
+
+ /* ===== MAIN FEED (hidden until login) ===== */
+ #feed-container {
+     display: none;
+     padding: 1.2rem 1.5rem 2rem;
+ }
+
+ /* header */
+ .feed-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-bottom: 1rem;
+     border-bottom: 1px solid #eaeef2;
+     flex-wrap: wrap;
+ }
+
+ .feed-header .brand {
+     font-weight: 700;
+     font-size: 1.6rem;
+     color: #1b1f23;
+ }
+
+ .feed-header .brand i {
+     color: #0a66c2;
+ }
+
+ .feed-header .user-badge {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .feed-header .user-badge span {
+     font-weight: 500;
+     color: #1b1f23;
+ }
+
+ .feed-header .user-badge i {
+     font-size: 1.8rem;
+     color: #0a66c2;
+     background: #e6edf5;
+     padding: 8px;
+     border-radius: 40px;
+ }
+
+ .feed-header .logout-btn {
+     background: none;
+     border: 1px solid #d1d9e6;
+     padding: 6px 16px;
+     border-radius: 30px;
+     font-weight: 500;
+     color: #2c3e50;
+     cursor: pointer;
+     transition: 0.1s;
+     font-size: 0.9rem;
+ }
+
+ .feed-header .logout-btn:hover {
+     background: #f0f2f5;
+ }
+
+ /* post composer */
+ .composer {
+     background: #f8faff;
+     border-radius: 28px;
+     padding: 1.2rem 1.5rem;
+     margin: 1.2rem 0 1.8rem;
+     border: 1px solid #e4e9f0;
+ }
+
+ .composer textarea {
+     width: 100%;
+     border: none;
+     background: transparent;
+     resize: vertical;
+     font-size: 1rem;
+     padding: 4px 0;
+     min-height: 60px;
+     outline: none;
+     font-weight: 400;
+ }
+
+ .composer .actions {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 8px;
+     flex-wrap: wrap;
+ }
+
+ .composer .actions .left {
+     display: flex;
+     gap: 12px;
+ }
+
+ .composer .actions .left i {
+     font-size: 1.5rem;
+     color: #4f5f73;
+     cursor: pointer;
+     transition: 0.1s;
+ }
+
+ .composer .actions .left i:hover {
+     color: #0a66c2;
+ }
+
+ .composer .actions button {
+     background: #0a66c2;
+     border: none;
+     padding: 8px 24px;
+     border-radius: 40px;
+     color: white;
+     font-weight: 600;
+     cursor: pointer;
+ }
+
+ .composer .actions button:hover {
+     background: #084b8f;
+ }
+
+ /* notifications */
+ #notification-banner {
+     background: #e3f0ff;
+     padding: 10px 18px;
+     border-radius: 40px;
+     margin-bottom: 18px;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     font-size: 0.95rem;
+     color: #07427a;
+     border-left: 6px solid #0a66c2;
+     flex-wrap: wrap;
+ }
+
+ #notification-banner i {
+     font-size: 1.2rem;
+ }
+
+ #notification-banner .notif-text {
+     flex: 1;
+ }
+
+ #notification-banner .clear-notif {
+     background: transparent;
+     border: none;
+     color: #0a66c2;
+     font-weight: 600;
+     cursor: pointer;
+ }
+
+ /* posts feed */
+ .post {
+     background: white;
+     border-radius: 24px;
+     padding: 1.2rem 1.5rem;
+     margin-bottom: 1.2rem;
+     border: 1px solid #e4e9f0;
+     transition: 0.1s;
+ }
+
+ .post-header {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     margin-bottom: 8px;
+ }
+
+ .post-header .avatar {
+     background: #0a66c2;
+     color: white;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 40px;
+     font-weight: 600;
+ }
+
+ .post-header .post-author {
+     font-weight: 600;
+ }
+
+ .post-header .post-time {
+     color: #5f6f84;
+     font-size: 0.8rem;
+     margin-left: auto;
+ }
+
+ .post-content {
+     margin: 10px 0 12px;
+     font-size: 1rem;
+     line-height: 1.5;
+     word-break: break-word;
+ }
+
+ .post-media {
+     margin: 8px 0 12px;
+     background: #f2f5f9;
+     border-radius: 20px;
+     padding: 12px 16px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     color: #1f2a3f;
+ }
+
+ .post-media i {
+     font-size: 1.4rem;
+     color: #0a66c2;
+ }
+
+ .post-actions {
+     display: flex;
+     gap: 24px;
+     align-items: center;
+     border-top: 1px solid #edf2f7;
+     padding-top: 12px;
+     margin-top: 4px;
+     flex-wrap: wrap;
+ }
+
+ .post-actions .action-btn {
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     background: transparent;
+     border: none;
+     font-weight: 500;
+     color: #3b4a5e;
+     cursor: pointer;
+     padding: 6px 10px;
+     border-radius: 40px;
+     transition: 0.1s;
+ }
+
+ .post-actions .action-btn:hover {
+     background: #eef3fa;
+ }
+
+ .post-actions .action-btn i {
+     font-size: 1.2rem;
+ }
+
+ .post-actions .action-btn.liked {
+     color: #0a66c2;
+ }
+
+ .post-actions .action-btn.liked i {
+     font-weight: 900;
+ }
+
+ .comment-section {
+     margin-top: 12px;
+     padding-top: 8px;
+     border-top: 1px dashed #d9e1ea;
+ }
+
+ .comment {
+     display: flex;
+     gap: 10px;
+     margin: 8px 0;
+     font-size: 0.95rem;
+     background: #f6f9fe;
+     padding: 8px 14px;
+     border-radius: 30px;
+ }
+
+ .comment .comment-author {
+     font-weight: 600;
+     color: #0a2e4e;
+ }
+
+ .comment-input {
+     display: flex;
+     gap: 8px;
+     margin-top: 8px;
+ }
+
+ .comment-input input {
+     flex: 1;
+     padding: 10px 16px;
+     border: 1px solid #d9e1ea;
+     border-radius: 40px;
+     background: white;
+     outline: none;
+ }
+
+ .comment-input button {
+     background: #0a66c2;
+     border: none;
+     color: white;
+     padding: 0 20px;
+     border-radius: 40px;
+     font-weight: 600;
+     cursor: pointer;
+ }
+
+ .friend-request-btn {
+     background: #eef3fa;
+     border: none;
+     padding: 4px 14px;
+     border-radius: 40px;
+     font-weight: 500;
+     font-size: 0.8rem;
+     cursor: pointer;
+ }
+
+ .friend-request-btn.pending {
+     background: #d4e0f0;
+     color: #07427a;
+ }
+
+ /* privacy badge */
+ .privacy-badge {
+     font-size: 0.7rem;
+     background: #eef3fa;
+     padding: 2px 12px;
+     border-radius: 40px;
+     color: #2c3e50;
+     margin-left: 8px;
+ }
+
+ @media (max-width: 550px) {
+     #app {
+         margin: 6px;
+         border-radius: 16px;
+     }
+
+     #feed-container {
+         padding: 0.8rem;
+     }
+ }
